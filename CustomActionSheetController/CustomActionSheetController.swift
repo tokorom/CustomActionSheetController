@@ -21,6 +21,16 @@ public class CustomActionSheetController: UIViewController {
         self.actionsTable?.layoutMargins = UIEdgeInsetsZero
         self.cancelActionsTable?.separatorInset = UIEdgeInsetsZero
         self.cancelActionsTable?.layoutMargins = UIEdgeInsetsZero
+
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            let maxHeight: CGFloat = 640
+            var contentHeight = CGFloat(44 * self.actions.count)
+            if maxHeight < contentHeight {
+                contentHeight = maxHeight
+                self.actionsTable?.scrollEnabled = true
+            }
+            self.preferredContentSize = CGSizeMake(320, contentHeight)
+        }
     }
 
     public override func viewDidLayoutSubviews() {
@@ -34,7 +44,16 @@ public class CustomActionSheetController: UIViewController {
     public class func actionSheet(#title: String?, message: String?, sender: AnyObject? = nil) -> CustomActionSheetController {
 
         let frameworkBundle = NSBundle(identifier: "me.tokoro.CustomActionSheetController")
-        let storyboard = UIStoryboard(name: "CustomActionSheet", bundle: frameworkBundle)
+
+        var storyboardName: String
+
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            storyboardName = "CustomActionSheet~ipad"
+        } else {
+            storyboardName = "CustomActionSheet"
+        }
+
+        let storyboard = UIStoryboard(name: storyboardName, bundle: frameworkBundle)
         let viewController = storyboard.instantiateInitialViewController() as CustomActionSheetController
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -73,19 +92,21 @@ public class CustomActionSheetController: UIViewController {
     }
 
     func updateActionsTableFrame() {
-        if let table = self.actionsTable {
-            let contentSize = table.contentSize
-            var frame = table.frame
-            frame.size.height = contentSize.height
-            let bottomY = CGRectGetMinY(self.cancelActionsTable?.frame ?? CGRectZero) - 10
-            frame.origin.y = bottomY - CGRectGetHeight(frame)
-            let minY: CGFloat = 20.0
-            if minY > CGRectGetMinY(frame) {
-                table.scrollEnabled = true
-                frame.origin.y = minY
-                frame.size.height = bottomY - minY
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            if let table = self.actionsTable {
+                let contentSize = table.contentSize
+                var frame = table.frame
+                frame.size.height = contentSize.height
+                let bottomY = CGRectGetMinY(self.cancelActionsTable?.frame ?? CGRectZero) - 10
+                frame.origin.y = bottomY - CGRectGetHeight(frame)
+                let minY: CGFloat = 20.0
+                if minY > CGRectGetMinY(frame) {
+                    table.scrollEnabled = true
+                    frame.origin.y = minY
+                    frame.size.height = bottomY - minY
+                }
+                table.frame = frame
             }
-            table.frame = frame
         }
     }
 
