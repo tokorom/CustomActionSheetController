@@ -17,6 +17,11 @@
 		F39881C11A348FB300965BFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F39881BF1A348FB300965BFD /* LaunchScreen.xib */; };
 		F39881D41A348FE200965BFD /* CustomActionSheetController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37807961A348F4B007D6A8F /* CustomActionSheetController.framework */; };
 		F39881D51A348FE200965BFD /* CustomActionSheetController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F37807961A348F4B007D6A8F /* CustomActionSheetController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F39881DA1A34934E00965BFD /* CustomActionSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881D91A34934E00965BFD /* CustomActionSheetController.swift */; };
+		F39881E41A34974500965BFD /* CustomActionSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39881E31A34974500965BFD /* CustomActionSheet.storyboard */; };
+		F39881E61A349E2700965BFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39881E51A349E2700965BFD /* Images.xcassets */; };
+		F39881E81A349FC700965BFD /* CustomActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */; };
+		F39881EA1A34ACB400965BFD /* CustomActionSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		F39881BB1A348FB300965BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F39881BD1A348FB300965BFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F39881C01A348FB300965BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F39881D91A34934E00965BFD /* CustomActionSheetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetController.swift; sourceTree = "<group>"; };
+		F39881E31A34974500965BFD /* CustomActionSheet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomActionSheet.storyboard; sourceTree = "<group>"; };
+		F39881E51A349E2700965BFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetCell.swift; sourceTree = "<group>"; };
+		F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,11 @@
 			isa = PBXGroup;
 			children = (
 				F378079B1A348F4B007D6A8F /* CustomActionSheetController.h */,
+				F39881D91A34934E00965BFD /* CustomActionSheetController.swift */,
+				F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */,
+				F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */,
+				F39881E31A34974500965BFD /* CustomActionSheet.storyboard */,
+				F39881E51A349E2700965BFD /* Images.xcassets */,
 				F37807991A348F4B007D6A8F /* Supporting Files */,
 			);
 			path = CustomActionSheetController;
@@ -282,6 +297,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39881E41A34974500965BFD /* CustomActionSheet.storyboard in Resources */,
+				F39881E61A349E2700965BFD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39881E81A349FC700965BFD /* CustomActionSheetCell.swift in Sources */,
+				F39881EA1A34ACB400965BFD /* CustomActionSheetAction.swift in Sources */,
+				F39881DA1A34934E00965BFD /* CustomActionSheetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +476,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CustomActionSheetController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -471,6 +492,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CustomActionSheetController/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
