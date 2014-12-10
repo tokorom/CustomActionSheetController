@@ -48,7 +48,7 @@ public class CustomActionSheetController: UIViewController {
         var storyboardName: String
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            storyboardName = "CustomActionSheet~ipad"
+            storyboardName = "CustomActionSheetForPad"
         } else {
             storyboardName = "CustomActionSheet"
         }

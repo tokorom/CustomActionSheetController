@@ -22,7 +22,7 @@
 		F39881E61A349E2700965BFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39881E51A349E2700965BFD /* Images.xcassets */; };
 		F39881E81A349FC700965BFD /* CustomActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */; };
 		F39881EA1A34ACB400965BFD /* CustomActionSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */; };
-		F398822D1A351ADE00965BFD /* CustomActionSheet~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F398822C1A351ADE00965BFD /* CustomActionSheet~ipad.storyboard */; };
+		F398822D1A351ADE00965BFD /* CustomActionSheetForPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F398822C1A351ADE00965BFD /* CustomActionSheetForPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 		F39881E51A349E2700965BFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetCell.swift; sourceTree = "<group>"; };
 		F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetAction.swift; sourceTree = "<group>"; };
-		F398822C1A351ADE00965BFD /* CustomActionSheet~ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CustomActionSheet~ipad.storyboard"; sourceTree = "<group>"; };
+		F398822C1A351ADE00965BFD /* CustomActionSheetForPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomActionSheetForPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 				F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */,
 				F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */,
 				F39881E31A34974500965BFD /* CustomActionSheet.storyboard */,
-				F398822C1A351ADE00965BFD /* CustomActionSheet~ipad.storyboard */,
+				F398822C1A351ADE00965BFD /* CustomActionSheetForPad.storyboard */,
 				F39881E51A349E2700965BFD /* Images.xcassets */,
 				F37807991A348F4B007D6A8F /* Supporting Files */,
 			);
@@ -300,7 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F398822D1A351ADE00965BFD /* CustomActionSheet~ipad.storyboard in Resources */,
+				F398822D1A351ADE00965BFD /* CustomActionSheetForPad.storyboard in Resources */,
 				F39881E41A34974500965BFD /* CustomActionSheet.storyboard in Resources */,
 				F39881E61A349E2700965BFD /* Images.xcassets in Resources */,
 			);
