@@ -164,6 +164,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49803921580314636" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ooT-57-e2m" secondAttribute="bottom" id="1rn-1k-FFs"/>
+                                    <constraint firstItem="imF-Tu-stv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CpG-xv-8Vq" secondAttribute="top" id="3h8-BS-MXX"/>
                                     <constraint firstAttribute="trailing" secondItem="ooT-57-e2m" secondAttribute="trailing" id="ABb-Qt-653"/>
                                     <constraint firstAttribute="trailing" secondItem="imF-Tu-stv" secondAttribute="trailing" id="Ejx-Qb-2Ah"/>
                                     <constraint firstItem="ooT-57-e2m" firstAttribute="top" secondItem="imF-Tu-stv" secondAttribute="bottom" constant="10" id="OwW-hv-sbK"/>
