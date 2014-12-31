@@ -58,6 +58,7 @@ public class CustomActionSheetController: UIViewController {
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             viewController.modalPresentationStyle = .Popover
+            viewController.popoverPresentationController?.backgroundColor = UIColor.blackColor()
         } else {
             viewController.modalPresentationStyle = .OverFullScreen
         }
