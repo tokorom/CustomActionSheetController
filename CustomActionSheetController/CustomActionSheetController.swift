@@ -40,7 +40,18 @@ public class CustomActionSheetController: UIViewController {
         self.cancelActionsTable?.reloadData()
         self.updateActionsTableFrame()
     }
+
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     
+        for (index, action) in enumerate(self.actions) {
+            if .Selected == action.style {
+                self.scrollToIndex(index)
+                break
+            }
+        }
+    }
+
     public class func actionSheet(#title: String?, message: String?, sender: AnyObject? = nil) -> CustomActionSheetController {
 
         let frameworkBundle = NSBundle(identifier: "me.tokoro.CustomActionSheetController")
@@ -163,6 +174,13 @@ extension CustomActionSheetController: UITableViewDataSource {
         }
     }
 
+// MARK: - Private Methods
+
+    func scrollToIndex(index: Int) {
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        self.actionsTable?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: false)
+    }
+
 }
 
 // MARK: - UITableViewDelegate
@@ -176,7 +194,11 @@ extension CustomActionSheetController: UITableViewDelegate {
         } else if self.cancelActionsTable == tableView {
             action = self.cancelActions[indexPath.row]
         }
-        self.dismissWithAction(action)
+
+        dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
+            self?.dismissWithAction(action)
+            return
+        }
     }
 
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

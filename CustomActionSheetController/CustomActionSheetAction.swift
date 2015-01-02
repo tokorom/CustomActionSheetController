@@ -4,11 +4,11 @@
 //  Created by ToKoRo on 2014-12-08.
 //
 
-public enum CustomActionSheetActionStyle {
-    case Default
-    case Cancel
-    case Destructive
-    case Selected
+public enum CustomActionSheetActionStyle: Int {
+    case Default = 0
+    case Cancel = 1
+    case Destructive = 10
+    case Selected = 100
 }
 
 public class CustomActionSheetAction {
