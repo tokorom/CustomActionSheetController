@@ -14,6 +14,8 @@ public class CustomActionSheetController: UIViewController {
     var actions = [CustomActionSheetAction]()
     var cancelActions = [CustomActionSheetAction]()
 
+    public var forceInterfaceOrientation: UIInterfaceOrientation?
+
     public override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -33,12 +35,50 @@ public class CustomActionSheetController: UIViewController {
         }
     }
 
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        self.forceInterfaceOrientation = nil
+    }
+
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     
         self.actionsTable?.reloadData()
         self.cancelActionsTable?.reloadData()
         self.updateActionsTableFrame()
+    }
+
+    public override func shouldAutorotate() -> Bool {
+        if nil != self.forceInterfaceOrientation {
+            return false
+        }
+        return true
+    }
+
+    public override func supportedInterfaceOrientations() -> Int {
+        if let forceInterfaceOrientation = self.forceInterfaceOrientation {
+            switch forceInterfaceOrientation {
+            case .Portrait:
+                return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+            case .PortraitUpsideDown:
+                return Int(UIInterfaceOrientationMask.PortraitUpsideDown.rawValue)
+            case .LandscapeLeft:
+                return Int(UIInterfaceOrientationMask.LandscapeLeft.rawValue)
+            case .LandscapeRight:
+                return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue)
+            default:
+                break
+            }
+        }
+        return Int(UIInterfaceOrientationMask.All.rawValue)
+    }
+
+    public override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        if UIDevice.currentDevice().orientation.isPortrait {
+            return .Portrait
+        }
+        return self.interfaceOrientation
     }
 
     public override func viewWillAppear(animated: Bool) {
