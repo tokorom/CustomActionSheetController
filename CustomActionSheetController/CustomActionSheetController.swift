@@ -111,7 +111,8 @@ public class CustomActionSheetController: UIViewController {
             viewController.modalPresentationStyle = .Popover
             viewController.popoverPresentationController?.backgroundColor = UIColor.blackColor()
         } else {
-            viewController.modalPresentationStyle = .OverFullScreen
+            viewController.modalPresentationStyle = .Custom
+            viewController.transitioningDelegate = viewController
         }
 
         if let barButtonItem = sender as? UIBarButtonItem {
@@ -243,6 +244,16 @@ extension CustomActionSheetController: UITableViewDelegate {
 
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44.0
+    }
+
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+
+extension CustomActionSheetController: UIViewControllerTransitioningDelegate {
+
+    public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController!, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return CustomActionSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
 
 }

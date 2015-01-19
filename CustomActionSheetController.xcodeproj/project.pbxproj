@@ -23,6 +23,7 @@
 		F39881E81A349FC700965BFD /* CustomActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */; };
 		F39881EA1A34ACB400965BFD /* CustomActionSheetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */; };
 		F398822D1A351ADE00965BFD /* CustomActionSheetForPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F398822C1A351ADE00965BFD /* CustomActionSheetForPad.storyboard */; };
+		F3A517771A6CB0A500FFFFA4 /* CustomActionSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A517761A6CB0A500FFFFA4 /* CustomActionSheetPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		F39881E71A349FC700965BFD /* CustomActionSheetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetCell.swift; sourceTree = "<group>"; };
 		F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetAction.swift; sourceTree = "<group>"; };
 		F398822C1A351ADE00965BFD /* CustomActionSheetForPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomActionSheetForPad.storyboard; sourceTree = "<group>"; };
+		F3A517761A6CB0A500FFFFA4 /* CustomActionSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		F37807981A348F4B007D6A8F /* CustomActionSheetController */ = {
 			isa = PBXGroup;
 			children = (
+				F3A517761A6CB0A500FFFFA4 /* CustomActionSheetPresentationController.swift */,
 				F378079B1A348F4B007D6A8F /* CustomActionSheetController.h */,
 				F39881D91A34934E00965BFD /* CustomActionSheetController.swift */,
 				F39881E91A34ACB400965BFD /* CustomActionSheetAction.swift */,
@@ -332,6 +335,7 @@
 			files = (
 				F39881E81A349FC700965BFD /* CustomActionSheetCell.swift in Sources */,
 				F39881EA1A34ACB400965BFD /* CustomActionSheetAction.swift in Sources */,
+				F3A517771A6CB0A500FFFFA4 /* CustomActionSheetPresentationController.swift in Sources */,
 				F39881DA1A34934E00965BFD /* CustomActionSheetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
