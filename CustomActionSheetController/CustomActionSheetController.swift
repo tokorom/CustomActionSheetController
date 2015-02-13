@@ -105,7 +105,7 @@ public class CustomActionSheetController: UIViewController {
         }
 
         let storyboard = UIStoryboard(name: storyboardName, bundle: frameworkBundle)
-        let viewController = storyboard.instantiateInitialViewController() as CustomActionSheetController
+        let viewController = storyboard.instantiateInitialViewController() as! CustomActionSheetController
 
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             viewController.modalPresentationStyle = .Popover
@@ -197,7 +197,7 @@ extension CustomActionSheetController: UITableViewDataSource {
         } else {
             cellIdentifier = "Default"
         }
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomActionSheetCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomActionSheetCell
         cell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
